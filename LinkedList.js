@@ -1,3 +1,5 @@
+// https://visualgo.net/en/list
+
 class Node {
   constructor(value) {
     this.value = value;
