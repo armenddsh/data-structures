@@ -2,7 +2,13 @@ package com.shala.tree;
 
 import java.beans.beancontext.BeanContext;
 
+import javax.management.RuntimeErrorException;
+
 public class Tree {
+
+    public enum Traverse {
+        PRE_ORDER, IN_ORDER, POST_ORDER, LEVEL_ORDER
+    }
 
     private Node root;
 
@@ -54,6 +60,68 @@ public class Tree {
         }
 
         return false;
+    }
+
+    public void traverse(Traverse traverse) {
+        Node node = this.root;
+
+        if (traverse == Traverse.PRE_ORDER) {
+            traversePreOrder(node);
+        }
+        if (traverse == Traverse.IN_ORDER) {
+            traverseInOrder(node);
+        }
+        if (traverse == Traverse.POST_ORDER) {
+            traversePostOrder(node);
+        }
+        if (traverse == Traverse.LEVEL_ORDER) {
+            traverseLevelOrder(node);
+        }
+    }
+
+    private void traverseLevelOrder(Node node) {
+        int height = height();
+        for (int i = 0; i < height; i++) {
+            getValuesAtNode(i);
+        }
+    }
+
+    private void traversePreOrder(Node node) {
+        if (node != null) {
+            System.out.println(node.value);
+            traversePreOrder(node.left);
+            traversePreOrder(node.right);
+        }
+    }
+
+    private void traverseInOrder(Node node) {
+        if (node != null) {
+            traverseInOrder(node.left);
+            System.out.println(node.value);
+            traverseInOrder(node.right);
+        }
+    }
+
+    private void traversePostOrder(Node node) {
+        if (node != null) {
+            traversePostOrder(node.left);
+            traversePostOrder(node.right);
+            System.out.println(node.value);
+        }
+    }
+
+    public int height() {
+        return height(root);
+    }
+
+    private int height(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return 0;
+        }
+        return 1 + Math.max(height(root.left), height(root.right));
     }
 
     @Override
