@@ -1,8 +1,7 @@
 package com.shala.tree;
 
-import java.beans.beancontext.BeanContext;
-
-import javax.management.RuntimeErrorException;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Tree {
 
@@ -80,9 +79,16 @@ public class Tree {
     }
 
     private void traverseLevelOrder(Node node) {
-        int height = height();
-        for (int i = 0; i < height; i++) {
-            getValuesAtNode(i);
+        Queue<Node> qNodes = new LinkedList<>();
+        qNodes.add(node);
+
+        while (!qNodes.isEmpty()) {
+            Node n = qNodes.poll();
+            if (n != null) {
+                qNodes.add(n.left);
+                qNodes.add(n.right);
+                System.out.printf("%s  ", n.value);
+            }
         }
     }
 

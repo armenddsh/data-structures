@@ -19,11 +19,11 @@ public class App {
         tree.insert(8);
         tree.insert(26);
 
-        int height = tree.height();
-        System.out.println(height);
+        // int height = tree.height();
+        // System.out.println(height);
         // tree.traverse(Traverse.PRE_ORDER);
         // tree.traverse(Traverse.IN_ORDER);
         // tree.traverse(Traverse.POST_ORDER);
-        // tree.traverse(Traverse.LEVEL_ORDER);
+        tree.traverse(Traverse.LEVEL_ORDER);
     }
 }
