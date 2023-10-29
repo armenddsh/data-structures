@@ -2,8 +2,6 @@ from exercises.reverse import reverse
 
 def test_reverse():
 
-    # generate test cases
-
     test_cases = [
         ([1,2,3,4,5,6], [6,5,4,3,2,1]),
         ([1,2,3,4,5], [5,4,3,2,1]),

@@ -2,8 +2,6 @@ from exercises.palindrome import is_palindrome
 
 def test_is_palindrome():
 
-    # generate test cases
-
     test_cases = [
         ("", False),
         ("a", False),
@@ -66,8 +64,6 @@ def test_is_palindrome():
         ("aaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", False),
         ("aaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaa", False)
     ]
-
-    # run test cases
 
     for (test_input, expected_result) in test_cases:
         assert is_palindrome(test_input) == expected_result
