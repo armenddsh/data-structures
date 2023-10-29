@@ -1,4 +1,4 @@
-from exercises.reverse import reverse
+from exercises.reverse import reverse, reverse_integer
 
 def test_reverse():
 
@@ -21,3 +21,22 @@ def test_reverse():
 
     for (test_input, expected_result) in test_cases:
         assert all([a == b for a, b in zip(reverse(test_input), expected_result)])
+
+def test_reverse_integer():
+
+    test_cases = [
+        (12345, 54321),
+        (1234, 4321),
+        (123, 321),
+        (12, 21),
+        (1, 1),
+        (0, 0),
+        (-12345, -54321),
+        (-1234, -4321),
+        (-123, -321),
+        (-12, -21),
+        (-1, -1)
+    ]
+
+    for (test_input, expected_result) in test_cases:
+        assert reverse_integer(test_input) == expected_result   

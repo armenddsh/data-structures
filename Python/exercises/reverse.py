@@ -19,3 +19,21 @@ def reverse(nums):
         lastIndex = lastIndex - 1
     
     return nums
+
+def reverse_integer(number):
+    number_str = str(number)
+    number_array = list(number_str)
+    startIndex = 0
+    lastIndex = len(number_array) - 1
+
+    if number_array[0] == '-':
+        startIndex = 1
+
+    while startIndex < lastIndex:
+        number_array[startIndex], number_array[lastIndex] = number_array[lastIndex], number_array[startIndex]
+
+        startIndex = startIndex + 1
+        lastIndex = lastIndex - 1
+    
+    number_str = ''.join(number_array)
+    return int(number_str)
