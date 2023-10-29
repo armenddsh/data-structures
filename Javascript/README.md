@@ -1,2 +1,0 @@
-# data-structures
-Learn datastructures
