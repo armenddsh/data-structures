@@ -17,3 +17,5 @@ def reverse(nums):
 
         startIndex = startIndex + 1
         lastIndex = lastIndex - 1
+    
+    return nums
