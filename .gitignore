@@ -1,2 +1,4 @@
-Python/tests/__pycache__/test_palindrome.cpython-311-pytest-7.4.3.pyc
-Python/tests/__pycache__/test_palindrome.cpython-311-pytest-7.4.3.pyc
+venv
+.pyc
+
+__pycache__
