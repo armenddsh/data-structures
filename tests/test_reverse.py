@@ -1,4 +1,4 @@
-from exercises.reverse import reverse, reverse_integer
+from src.exercises.reverse import reverse, reverse_integer
 
 def test_reverse():
 

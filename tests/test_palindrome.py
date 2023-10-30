@@ -1,4 +1,4 @@
-from exercises.palindrome import is_palindrome
+from src.exercises.palindrome import is_palindrome
 
 def test_is_palindrome():
 

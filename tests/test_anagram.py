@@ -1,4 +1,4 @@
-from exercises.anagram import is_anagram
+from src.exercises.anagram import is_anagram
 
 def test_is_anagram():
 
