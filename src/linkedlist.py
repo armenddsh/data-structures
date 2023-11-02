@@ -3,6 +3,7 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+        self.prev = None
 
     def __repr__(self):
         if self.next:
@@ -11,25 +12,43 @@ class Node:
             return f"{self.data}"
 
 class LinkedList:
-    def __init__(self, data):
-        self.head = Node(data)
-        self.next = None
+    def __init__(self):
+        self.head = None
+        self.tail = None
 
     def append_beginning(self, data):
         node = Node(data)
-        node.next = self.head
-        self.head = node
 
+        if self.head is None:
+            self.head = node
+            self.tail = node
+            return
+    
+        self.head.prev = node
+        node.next = self.head
+        node.prev = None
+        self.head = node
+       
     def append_end(self, data):
         node = Node(data)
 
-        current_node = self.head
-        while current_node.next:
-            current_node = current_node.next
-        
-        current_node.next = node
+        if self.head is None:
+            self.head = node
+            self.tail = node
+            return
 
-    def traverse(self):
+        node.next = None
+        node.prev = self.tail
+
+        self.tail.next = node
+        self.tail = node
+
+    def traverse_forward(self):
         current_node = self.head
         while current_node.next:
             current_node = current_node.next
+
+    def traverse_backwards(self):
+        current_node = self.tail
+        while current_node.prev:
+            current_node = current_node.prev
