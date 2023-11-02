@@ -43,6 +43,24 @@ class LinkedList:
         self.tail.next = node
         self.tail = node
 
+    def remove_first(self):
+        pass
+
+    def remove_last(self):
+        pass
+
+    def remove(self, data):
+        pass
+
+    def search(self, data):
+        pass
+
+    def is_empty(self):
+        pass
+
+    def length(self):
+        pass
+
     def traverse_forward(self):
         current_node = self.head
         while current_node.next:
@@ -52,3 +70,6 @@ class LinkedList:
         current_node = self.tail
         while current_node.prev:
             current_node = current_node.prev
+
+    def __repr__(self):
+        pass
